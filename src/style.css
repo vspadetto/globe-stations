@@ -1,0 +1,61 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: rgb(103, 134, 178);
+    padding: 8px;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 120%;
+    font-weight: 600;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.card-close-btn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img {
+    max-width: 200px;
+}
+
+.title {
+    padding: 5px 5px;
+    position: absolute;
+    background: rgb(103, 134, 178);
+    box-sizing: border-box;
+}

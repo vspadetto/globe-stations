@@ -1,0 +1,25 @@
+{
+  "name": "globe-stations",
+  "version": "1.0.0",
+  "description": "Interactive globe for display research stations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IovlevYuliy/globe-stations.git"
+  },
+  "keywords": [
+    "globe",
+    "threejs",
+    "stations",
+    "visualization"
+  ],
+  "author": "Yuliy Iovlev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IovlevYuliy/globe-stations/issues"
+  },
+  "homepage": "https://github.com/IovlevYuliy/globe-stations#readme"
+}
