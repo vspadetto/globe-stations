@@ -85,8 +85,7 @@ function animate(globe) {
     raycaster.setFromCamera(mouse, camera);
 
     // rotate globe
-    globe.rotation.y += 0.0001;
-    globe.rotation.x += 0.0002;
+    globe.rotation.y += 0.0003;
 
     cameraControls.update();
     renderer.render(scene, camera);
@@ -95,7 +94,7 @@ function animate(globe) {
 
 function initScene(globe) {
     // Setup light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
     directionalLight.position.set(1, 1, 1);
 
     // Setup renderer
@@ -115,14 +114,16 @@ function initScene(globe) {
     camera.aspect = ratio;
     camera.updateProjectionMatrix();
     camera.position.z = 200;
+    camera.position.y = 200;
 
     // Setup camera controls
-    cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
-    cameraControls.noPan = true;
-    cameraControls.zoomSpeed = 0.8;
+    cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+    cameraControls.enablePan = false;
+    cameraControls.zoomSpeed = 0.6;
     cameraControls.maxDistance = 200;
     cameraControls.minDistance = 120;
-    cameraControls.rotateSpeed = 2;
+    cameraControls.rotateSpeed = 0.5;
+    cameraControls.maxPolarAngle = Math.PI / 2;
 }
 
 function initGlobe() {
@@ -133,14 +134,18 @@ function initGlobe() {
         ...station,
     }));
 
-    return new ThreeGlobe()
-        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    const globe = new ThreeGlobe()
+        .globeImageUrl('https://i.postimg.cc/85dZC9Zs/image.png')
         .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
         .pointsData(points)
+        .showAtmosphere(false)
         .pointAltitude(0)
         .pointColor(() => '#ff0000')
         .pointResolution(32)
+        .showGraticules(true)
         .pointRadius(0.4);
+
+    return globe;
 }
 
 (async function start() {
@@ -151,8 +156,6 @@ function initGlobe() {
         initScene(globe);
         animate(globe);
         bindEvents();
-
-        console.log(points3d);
     } catch(error) {
         console.log(error);
     }
