@@ -145,7 +145,7 @@ function initGlobe() {
         .pointRadius(0.4);
 
     const globeMaterial = globe.globeMaterial();
-    new THREE.TextureLoader().load('https://unpkg.com/three-globe/example/img/earth-topology.png', texture => {
+    new THREE.TextureLoader().load('./textures/earth-topology.png', texture => {
         globeMaterial.map = texture;
         globeMaterial.bumpMap = texture;
         globeMaterial.bumpScale = 5;

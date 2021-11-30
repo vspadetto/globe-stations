@@ -135,8 +135,8 @@ function initGlobe() {
     }));
 
     const globe = new ThreeGlobe()
-        .globeImageUrl('https://i.postimg.cc/85dZC9Zs/image.png')
-        .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+        .globeImageUrl('./textures/earth-texture.png')
+        .bumpImageUrl('./textures/earth-texture.png')
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
