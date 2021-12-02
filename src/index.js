@@ -134,7 +134,7 @@ function initGlobe() {
 
     const globe = new ThreeGlobe()
         .globeImageUrl('./textures/earth-texture.png')
-        .bumpImageUrl('./textures/earth-texture.png')
+        .bumpImageUrl('./textures/earth-topology.png')
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
