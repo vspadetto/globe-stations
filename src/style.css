@@ -16,46 +16,62 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: rgb(103, 134, 178);
-    padding: 8px;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
 }
 
-.card-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 16px;
+.card-station-name {
+    font-family: Graphik LC;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    max-width: 250px;
 }
 
-.card-title {
-    font-size: 120%;
-    font-weight: 600;
-    flex-grow: 1;
-    text-overflow: ellipsis;
-    overflow-x: hidden;
-    white-space: nowrap;
-}
+.card-station-link {
+    font-family: Graphik LC;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    text-align: left;
 
-.card-close-btn {
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 4px;
-    cursor: pointer;
+    margin-top: 5px;
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 22px;
 }
 
 .card-img {
-    max-width: 200px;
+    max-width: 250px;
+    padding-bottom: 20px;
 }
 
-.title {
-    padding: 5px 5px;
+.popup {
     position: absolute;
-    background: rgb(103, 134, 178);
-    box-sizing: border-box;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+
+    max-width: 360px;
+}
+
+.popup > span {
+    font-family: Graphik LC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 23px;
+    display: inline-block;
+
+    margin: 10px 20px;
 }

@@ -12,13 +12,10 @@ let selectedPoint;
 
 function getCardElement(info) {
     return `
-        <div class="card-header">
-            <div class="card-title">${info.StationName}</div>
-            <div class="card-close-btn">X</div>
-        </div>
         <div class="card-content">
             <image class="card-img" src=https://interact-gis.org/Files/StationImages/${info.Image}></image>
-            <a href='#' rel='noreferrer noopener'>More information &rarr;</a>
+            <div class="card-station-name">${info.StationName}</div>
+            <a class="card-station-link" href='#' rel='noreferrer noopener'>MORE INFORMATION→</a>
         </div>
     `;
 }
@@ -38,18 +35,18 @@ function displayCard(e, stationInfo) {
     document.body.appendChild(cardElement);
 }
 
-function showTitle(e, stationInfo) {
-    const titleElement = document.getElementsByClassName('title')[0];
+function showPopup(e, stationInfo) {
+    const popupElement = document.getElementsByClassName('popup')[0];
 
-    titleElement.innerHTML = stationInfo.StationName;
-    titleElement.style.left = `${e.clientX + 20}px`;
-    titleElement.style.top = `${e.clientY}px`;
-    titleElement.style.display = `block`;
+    popupElement.children[0].innerHTML = stationInfo.StationName;
+    popupElement.style.left = `${e.clientX + 20}px`;
+    popupElement.style.top = `${e.clientY}px`;
+    popupElement.style.display = `block`;
 }
 
-function hideTitle() {
-    const titleElement = document.getElementsByClassName('title')[0];
-    titleElement.style.display = 'none'
+function hidePopup() {
+    const popupElement = document.getElementsByClassName('popup')[0];
+    popupElement.style.display = 'none'
 }
 
 function closeCard(e) {
@@ -99,6 +96,7 @@ function initScene(globe) {
 
     // Setup renderer
     renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor(new THREE.Color('#dcdcdc'));
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('globe-container').appendChild(renderer.domElement);
 
@@ -140,7 +138,7 @@ function initGlobe() {
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
-        .pointColor(() => '#ff0000')
+        .pointColor(() => '#11A7DB')
         .pointResolution(32)
         .showGraticules(true)
         .pointRadius(0.4);
@@ -180,9 +178,9 @@ function onMouseMove(event) {
         intersection.__threeObj.scale.multiplyScalar(SCALE_FACTOR);
         selectedPoint = intersection;
         document.body.style.cursor = 'pointer';
-        showTitle(event, selectedPoint);
+        showPopup(event, selectedPoint);
     } else {
-        hideTitle();
+        hidePopup();
     }
 }
 
