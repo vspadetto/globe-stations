@@ -92,7 +92,7 @@ function animate(globe) {
 
 function initScene(globe) {
     // Setup light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
     directionalLight.position.set(1, 1, 1);
 
     // Setup renderer
@@ -134,7 +134,7 @@ function initGlobe() {
     }));
 
     const globe = new ThreeGlobe()
-        .globeImageUrl('./textures/earth-texture.png')
+        .globeImageUrl('./textures/earth-texture2.png')
         .bumpImageUrl('./textures/earth-topology.png')
         .pointsData(points)
         .showAtmosphere(false)
