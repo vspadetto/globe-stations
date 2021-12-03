@@ -23,14 +23,14 @@ body {
 
 .card-station-name {
     font-family: Graphik LC;
-    font-size: 21px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 17px;
     letter-spacing: 0em;
     text-align: left;
 
-    max-width: 250px;
+    max-width: 200px;
 }
 
 .card-station-link {
@@ -38,22 +38,22 @@ body {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 17px;
+    line-height: 14px;
     letter-spacing: 0.05em;
     text-align: left;
 
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
-    margin: 22px;
+    margin: 20px;
 }
 
 .card-img {
-    max-width: 250px;
-    padding-bottom: 20px;
+    max-width: 200px;
+    padding-bottom: 12px;
 }
 
 .popup {
@@ -69,9 +69,9 @@ body {
     font-family: Graphik LC;
     font-style: normal;
     font-weight: 600;
-    font-size: 21px;
-    line-height: 23px;
+    font-size: 14px;
+    line-height: 14px;
     display: inline-block;
 
-    margin: 10px 20px;
+    margin: 6px 14px;
 }

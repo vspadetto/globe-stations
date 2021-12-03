@@ -11,11 +11,12 @@ let points3d;
 let selectedPoint;
 
 function getCardElement(info) {
+    const url = `https://www.interact-gis.org/Home/Station/${info.StationId}`;
     return `
         <div class="card-content">
             <image class="card-img" src=https://interact-gis.org/Files/StationImages/${info.Image}></image>
             <div class="card-station-name">${info.StationName}</div>
-            <a class="card-station-link" href='#' rel='noreferrer noopener'>MORE INFORMATION→</a>
+            <a class="card-station-link" href="${url}" rel='noreferrer noopener'>MORE INFORMATION→</a>
         </div>
     `;
 }
