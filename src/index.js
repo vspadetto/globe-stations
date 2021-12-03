@@ -2,7 +2,6 @@ const SCALE_FACTOR = 1.4;
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
-let cardElement;
 let renderer;
 let camera;
 let cameraControls;
@@ -24,16 +23,12 @@ function getCardElement(info) {
 function displayCard(e, stationInfo) {
     closeCard(e);
 
-    cardElement = document.createElement('div');
+    const cardElement = document.getElementsByClassName('card')[0];
 
-    cardElement.classList.add('card');
     cardElement.innerHTML = getCardElement(stationInfo);
     cardElement.style.left = `${e.clientX}px`;
     cardElement.style.top = `${e.clientY}px`;
-
-    cardElement.addEventListener('click', closeCard);
-
-    document.body.appendChild(cardElement);
+    cardElement.style.display = `block`;
 }
 
 function showPopup(e, stationInfo) {
@@ -53,10 +48,8 @@ function hidePopup() {
 function closeCard(e) {
     e.stopPropagation();
 
-    if (cardElement) {
-        document.body.removeChild(cardElement);
-        cardElement = null;
-    }
+    const cardElement = document.getElementsByClassName('card')[0];
+    cardElement.style.display = `none`;
 }
 
 function getIntersection() {
@@ -74,7 +67,7 @@ function getIntersection() {
 }
 
 function bindEvents() {
-    renderer.domElement.addEventListener('mousemove', onMouseMove, false);
+    document.addEventListener('mousemove', onMouseMove, false);
     renderer.domElement.addEventListener('mousedown', onMouseDown, false);
     window.addEventListener('resize', onWindowResize, false);
 }
@@ -187,6 +180,7 @@ function onMouseMove(event) {
 
 function onMouseDown(event) {
     if (selectedPoint) {
+        hidePopup();
         displayCard(event, selectedPoint);
     } else {
         closeCard(event);
