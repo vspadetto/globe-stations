@@ -8,6 +8,7 @@ let cameraControls;
 let scene;
 let points3d;
 let selectedPoint;
+let globeContainer;
 
 function getCardElement(info) {
     const url = `https://www.interact-gis.org/Home/Station/${info.StationId}`;
@@ -24,19 +25,21 @@ function displayCard(e, stationInfo) {
     closeCard(e);
 
     const cardElement = document.getElementsByClassName('card')[0];
+    const { left, top } = document.body.getBoundingClientRect();
 
     cardElement.innerHTML = getCardElement(stationInfo);
-    cardElement.style.left = `${e.clientX}px`;
-    cardElement.style.top = `${e.clientY}px`;
+    cardElement.style.left = `${e.clientX - left}px`;
+    cardElement.style.top = `${e.clientY - top}px`;
     cardElement.style.display = `block`;
 }
 
 function showPopup(e, stationInfo) {
     const popupElement = document.getElementsByClassName('popup')[0];
+    const { left, top } = document.body.getBoundingClientRect();
 
     popupElement.children[0].innerHTML = stationInfo.StationName;
-    popupElement.style.left = `${e.clientX + 20}px`;
-    popupElement.style.top = `${e.clientY}px`;
+    popupElement.style.left = `${e.clientX - left + 20}px`;
+    popupElement.style.top = `${e.clientY - top}px`;
     popupElement.style.display = `block`;
 }
 
@@ -88,11 +91,13 @@ function initScene(globe) {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
     directionalLight.position.set(1, 1, 1);
 
+    globeContainer = document.getElementById('globe-container');
+    const { width, height } = globeContainer.getBoundingClientRect();
     // Setup renderer
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(new THREE.Color('#dcdcdc'));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('globe-container').appendChild(renderer.domElement);
+    renderer.setSize(width, height, false);
+    globeContainer.appendChild(renderer.domElement);
 
     // Setup scene
     scene = new THREE.Scene();
@@ -101,11 +106,11 @@ function initScene(globe) {
     scene.add(directionalLight);
 
     // Setup camera
-    const ratio = window.innerWidth / window.innerHeight;
-    camera = new THREE.PerspectiveCamera(75, ratio, 0.1, 1000);
+    const ratio = width / height;
+    camera = new THREE.PerspectiveCamera(75, ratio, 0.01, 1000);
     camera.aspect = ratio;
     camera.updateProjectionMatrix();
-    camera.position.z = 200;
+    camera.position.z = 300;
     camera.position.y = 200;
 
     // Setup camera controls
@@ -157,8 +162,10 @@ function initGlobe() {
 // EVENT HANDLERS
 
 function onMouseMove(event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    const { width, height, left, top } = globeContainer.getBoundingClientRect();
+
+    mouse.x = ((event.clientX - left) / width) * 2 - 1;
+    mouse.y = -((event.clientY - top) / height) * 2 + 1;
 
     // reset previous selected object
     if (selectedPoint) {
@@ -188,8 +195,9 @@ function onMouseDown(event) {
 }
 
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const { width, height } = globeContainer.getBoundingClientRect();
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height, false);
 }
