@@ -87,10 +87,6 @@ function animate(globe) {
 };
 
 function initScene(globe) {
-    // Setup light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
-    directionalLight.position.set(1, 1, 1);
-
     globeContainer = document.getElementById('globe-container');
     const { width, height } = globeContainer.getBoundingClientRect();
     // Setup renderer
@@ -103,7 +99,6 @@ function initScene(globe) {
     scene = new THREE.Scene();
     scene.add(globe);
     scene.add(new THREE.AmbientLight(0xbbbbbb));
-    scene.add(directionalLight);
 
     // Setup camera
     const ratio = width / height;
@@ -116,6 +111,7 @@ function initScene(globe) {
     // Setup camera controls
     cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
     cameraControls.enablePan = false;
+    cameraControls.enableZoom = false;
     cameraControls.zoomSpeed = 0.6;
     cameraControls.maxDistance = 200;
     cameraControls.minDistance = 120;
