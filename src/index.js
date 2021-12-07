@@ -88,7 +88,7 @@ function animate(globe) {
 
 function initScene(globe) {
     // Setup light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0);
     directionalLight.position.set(1, 1, 1);
 
     globeContainer = document.getElementById('globe-container');
@@ -102,7 +102,7 @@ function initScene(globe) {
     // Setup scene
     scene = new THREE.Scene();
     scene.add(globe);
-    scene.add(new THREE.AmbientLight(0xbbbbbb));
+    scene.add(new THREE.AmbientLight('#eeeeee'));
     scene.add(directionalLight);
 
     // Setup camera
