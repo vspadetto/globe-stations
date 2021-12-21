@@ -131,16 +131,8 @@ function initGlobe() {
         ...station,
     }));
 
-    const globeMaterial = new THREE.MeshPhongMaterial();
-    new THREE.TextureLoader().load('./textures/eo_base_2020_clean_geo.jpg', texture => {
-        texture.minFilter = THREE.LinearFilter;
-        globeMaterial.map = texture;
-        globeMaterial.color = null;
-        globeMaterial.needsUpdate = true;
-    })
-
     const globeSphere = new ThreeGlobe()
-        .globeMaterial(globeMaterial)
+        .globeImageUrl('./textures/eo_base_2020_clean_geo.jpg')
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
@@ -148,7 +140,12 @@ function initGlobe() {
         .pointResolution(32)
         .showGraticules(true)
         .pointRadius(0.4)
-        .rendererSize(new THREE.Vector2(width, height));
+        .rendererSize(new THREE.Vector2(width, height))
+        .onGlobeReady(() => {
+            const texture = globeSphere.globeMaterial().map;
+            texture.minFilter = THREE.LinearFilter;
+            texture.needsUpdate = true;
+        });
 
     return globeSphere;
 }
