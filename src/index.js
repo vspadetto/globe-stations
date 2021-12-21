@@ -9,6 +9,7 @@ let scene;
 let points3d;
 let selectedPoint;
 let globeContainer;
+let globe;
 
 function getCardElement(info) {
     const url = `https://www.interact-gis.org/Home/Station/${info.StationId}`;
@@ -75,7 +76,7 @@ function bindEvents() {
     window.addEventListener('resize', onWindowResize, false);
 }
 
-function animate(globe) {
+function animate() {
     raycaster.setFromCamera(mouse, camera);
 
     // rotate globe
@@ -83,10 +84,10 @@ function animate(globe) {
 
     cameraControls.update();
     renderer.render(scene, camera);
-    requestAnimationFrame(() => animate(globe));
+    requestAnimationFrame(() => animate());
 };
 
-function initScene(globe) {
+function initScene() {
     globeContainer = document.getElementById('globe-container');
     const { width, height } = globeContainer.getBoundingClientRect();
     // Setup renderer
@@ -106,7 +107,7 @@ function initScene(globe) {
     camera.aspect = ratio;
     camera.updateProjectionMatrix();
     camera.position.z = 300;
-    camera.position.y = 200;
+    camera.position.y = 1000;
 
     // Setup camera controls
     cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -120,6 +121,9 @@ function initScene(globe) {
 }
 
 function initGlobe() {
+    globeContainer = document.getElementById('globe-container');
+    const { width, height } = globeContainer.getBoundingClientRect();
+
     const points = stations.map(station => ({
         lat: station.Latitude,
         lng: station.Longitude,
@@ -127,28 +131,35 @@ function initGlobe() {
         ...station,
     }));
 
-    const globe = new ThreeGlobe()
-        .globeImageUrl('./textures/eo_base_2020_clean_geo.jpg')
+    const globeMaterial = new THREE.MeshPhongMaterial();
+    new THREE.TextureLoader().load('./textures/eo_base_2020_clean_geo.jpg', texture => {
+        texture.minFilter = THREE.LinearFilter;
+        globeMaterial.map = texture;
+        globeMaterial.color = null;
+        globeMaterial.needsUpdate = true;
+    })
+
+    const globeSphere = new ThreeGlobe()
+        .globeMaterial(globeMaterial)
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
         .pointColor(() => '#F4343F')
         .pointResolution(32)
         .showGraticules(true)
-        .pointRadius(0.4);
+        .pointRadius(0.4)
+        .rendererSize(new THREE.Vector2(width, height));
 
-    globe.rotation.x = Math.PI / 4;
-
-    return globe;
+    return globeSphere;
 }
 
 (async function start() {
     try {
-        const globe = initGlobe();
+        globe = initGlobe();
         points3d = globe.pointsData();
 
-        initScene(globe);
-        animate(globe);
+        initScene();
+        animate();
         bindEvents();
     } catch(error) {
         console.log(error);
@@ -196,5 +207,6 @@ function onWindowResize() {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
+    globe.rendererSize(new THREE.Vector2(width, height));
     renderer.setSize(width, height, false);
 }
