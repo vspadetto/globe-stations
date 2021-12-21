@@ -128,15 +128,16 @@ function initGlobe() {
     }));
 
     const globe = new ThreeGlobe()
-        .globeImageUrl('./textures/earth-blue.png')
-        .bumpImageUrl('./textures/earth-topology.png')
+        .globeImageUrl('./textures/eo_base_2020_clean_geo.jpg')
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
-        .pointColor(() => '#11A7DB')
+        .pointColor(() => '#F4343F')
         .pointResolution(32)
         .showGraticules(true)
         .pointRadius(0.4);
+
+    globe.rotation.x = Math.PI / 4;
 
     return globe;
 }
