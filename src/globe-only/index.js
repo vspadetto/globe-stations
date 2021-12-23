@@ -91,8 +91,8 @@ function initScene() {
     globeContainer = document.getElementById('globe-container');
     const { width, height } = globeContainer.getBoundingClientRect();
     // Setup renderer
-    renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(new THREE.Color('#dcdcdc'));
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setClearColor(0x000000, 0);
     renderer.setSize(width, height, false);
     globeContainer.appendChild(renderer.domElement);
 
