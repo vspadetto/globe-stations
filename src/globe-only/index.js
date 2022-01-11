@@ -12,12 +12,13 @@ let globeContainer;
 let globe;
 
 function getCardElement(info) {
-    const url = `https://www.interact-gis.org/Home/Station/${info.StationId}`;
+    const linkUrl = `https://www.interact-gis.org/Home/Station/${info.StationId}`;
+    const imageUrl = `https://interact-gis.org/Files/StationImages/${info.Image}`;
     return `
         <div class="card-content">
-            <image class="card-img" src=https://interact-gis.org/Files/StationImages/${info.Image}></image>
+            <image class="card-img" src="${imageUrl}"></image>
             <div class="card-station-name">${info.StationName}</div>
-            <a class="card-station-link" href="${url}" target="_blank" rel="noreferrer noopener">MORE INFORMATION→</a>
+            <a class="card-station-link" href="${linkUrl}" target="_blank" rel="noreferrer noopener">MORE INFORMATION→</a>
         </div>
     `;
 }
