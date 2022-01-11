@@ -26,10 +26,10 @@ function displayCard(e, stationInfo) {
     closeCard(e);
 
     const cardElement = document.getElementsByClassName('card')[0];
-    const { left, top } = document.body.getBoundingClientRect();
+    const { top, right } = document.body.getBoundingClientRect();
 
     cardElement.innerHTML = getCardElement(stationInfo);
-    cardElement.style.left = `${e.clientX - left}px`;
+    cardElement.style.right = `${right - e.clientX}px`;
     cardElement.style.top = `${e.clientY - top}px`;
     cardElement.style.display = `block`;
 }

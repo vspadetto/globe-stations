@@ -17,7 +17,7 @@ function getCardElement(info) {
         <div class="card-content">
             <image class="card-img" src=https://interact-gis.org/Files/StationImages/${info.Image}></image>
             <div class="card-station-name">${info.StationName}</div>
-            <a class="card-station-link" href="${url} target="_blank" rel="noreferrer noopener">MORE INFORMATION→</a>
+            <a class="card-station-link" href="${url}" target="_blank" rel="noreferrer noopener">MORE INFORMATION→</a>
         </div>
     `;
 }
@@ -26,10 +26,10 @@ function displayCard(e, stationInfo) {
     closeCard(e);
 
     const cardElement = document.getElementsByClassName('card')[0];
-    const { left, top } = document.body.getBoundingClientRect();
+    const { right, top } = document.body.getBoundingClientRect();
 
     cardElement.innerHTML = getCardElement(stationInfo);
-    cardElement.style.left = `${e.clientX - left}px`;
+    cardElement.style.right = `${right - e.clientX}px`;
     cardElement.style.top = `${e.clientY - top}px`;
     cardElement.style.display = `block`;
 }
