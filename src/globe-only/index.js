@@ -17,7 +17,7 @@ function getCardElement(info) {
         <div class="card-content">
             <image class="card-img" src=https://interact-gis.org/Files/StationImages/${info.Image}></image>
             <div class="card-station-name">${info.StationName}</div>
-            <a class="card-station-link" href="${url}" rel='noreferrer noopener'>MORE INFORMATION→</a>
+            <a class="card-station-link" href="${url} target="_blank" rel="noreferrer noopener">MORE INFORMATION→</a>
         </div>
     `;
 }
