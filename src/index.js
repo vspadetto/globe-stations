@@ -133,7 +133,7 @@ function initGlobe() {
     }));
 
     const globeSphere = new ThreeGlobe()
-        .globeImageUrl('./textures/eo_base_2020_clean_geo.jpg')
+        .globeImageUrl('/textures/eo_base_2020_clean_geo.jpg')
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
