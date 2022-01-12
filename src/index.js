@@ -132,8 +132,9 @@ function initGlobe() {
         ...station,
     }));
 
+    const textureUrl = `${document.currentScript.src}/../textures/eo_base_2020_clean_geo.jpg`;
     const globeSphere = new ThreeGlobe()
-        .globeImageUrl('/textures/eo_base_2020_clean_geo.jpg')
+        .globeImageUrl(textureUrl)
         .pointsData(points)
         .showAtmosphere(false)
         .pointAltitude(0)
