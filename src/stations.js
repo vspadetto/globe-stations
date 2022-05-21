@@ -1376,7 +1376,7 @@ const stations = [
         "Longitude": 11.81907170
     },
     {
-        "StationId": 94,
+        "StationId": 97,
         "StationName": "Polar Station Petuniabuka",
         "Contact": null,
         "Website": "https://polar.amu.edu.pl",
@@ -1392,8 +1392,8 @@ const stations = [
         "Longitude": 16.456684856
     },
     {
-        "StationId": 95,
-        "StationName": "AWIPEV",
+        "StationId": 96,
+        "StationName": "AWIPEV Arctic Research Base",
         "Contact": null,
         "Website": "https://www.awipev.eu/",
         "Email": "station@awipev.eu",
