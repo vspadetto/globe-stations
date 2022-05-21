@@ -1119,22 +1119,22 @@ const stations = [
         "Latitude": 74.50235120,
         "Longitude": -23.00795200
     },
-//     {
-//         "StationId": 78,
-//         "StationName": "Villum Research Station (VRS)",
-//         "Contact": null,
-//         "Website": "https://villumresearchstation.dk/",
-//         "Email": "secretariat@villumresearchstation.au.dk",
-//         "AdminId": null,
-//         "Terms": null,
-//         "Acronym": "Villum",
-//         "Confirm": null,
-//         "Reject": null,
-//         "Image": "villum.jpg",
-//         "HasSignedGPDRContract": false,
-//         "Latitude": 81.60000000,
-//         "Longitude": -16.65000000
-//     },
+    {
+        "StationId": 78,
+        "StationName": "Villum Research Station (VRS)",
+        "Contact": null,
+        "Website": "https://villumresearchstation.dk/",
+        "Email": "secretariat@villumresearchstation.au.dk",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "Villum",
+        "Confirm": null,
+        "Reject": null,
+        "Image": "villum.jpg",
+        "HasSignedGPDRContract": false,
+        "Latitude": 81.60000000,
+        "Longitude": -16.65000000
+    },
     {
         "StationId": 79,
         "StationName": "Suðurnes Science and Learning Center",
