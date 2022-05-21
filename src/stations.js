@@ -1404,7 +1404,7 @@ const stations = [
         "Reject": null,
         "Image": null,
         "HasSignedGPDRContract": false,
-        "Latitude": 78.923485978,
-        "Longitude": 11.722842106
+        "Latitude": 79.923485978,
+        "Longitude": 11.522842106
     }
 ]
