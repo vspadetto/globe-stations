@@ -122,6 +122,7 @@ function initScene() {
 }
 
 function initGlobe() {
+
     globeContainer = document.getElementById('globe-container');
     const { width, height } = globeContainer.getBoundingClientRect();
 
@@ -129,27 +130,44 @@ function initGlobe() {
         lat: station.Latitude,
         lng: station.Longitude,
         size: 0,
-        ...station,
+        color: '#ff2222',
+        ...station
+
     }));
 
+    const observerPoints = stations.map(station => ({
+        lat: station.Latitude+3,
+        lng: station.Longitude,
+        size: 0,
+        color: '#2222ff',
+        ...station
+
+    })); 
+
     const textureUrl = `${document.currentScript.src}/../textures/eo_base_2020_clean_geo.jpg`;
+    
     const globeSphere = new ThreeGlobe()
         .globeImageUrl(textureUrl)
-        .pointsData(points)
+        .pointsData(points.concat(observerPoints))
         .showAtmosphere(false)
         .pointAltitude(0)
-        .pointColor(() => '#F4343F')
+        .pointColor('color')
         .pointResolution(32)
         .showGraticules(true)
         .pointRadius(0.4)
         .rendererSize(new THREE.Vector2(width, height))
         .onGlobeReady(() => {
+
             const texture = globeSphere.globeMaterial().map;
             texture.minFilter = THREE.LinearFilter;
             texture.needsUpdate = true;
+
         });
 
+ 
+
     return globeSphere;
+
 }
 
 (async function start() {
