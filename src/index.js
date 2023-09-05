@@ -135,8 +135,8 @@ function initGlobe() {
 
     }));
 
-    const observerPoints = stations.map(station => ({
-        lat: station.Latitude+3,
+    const observerPoints = observerStations.map(station => ({
+        lat: station.Latitude,
         lng: station.Longitude,
         size: 0,
         color: '#2222ff',
