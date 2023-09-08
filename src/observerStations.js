@@ -96,7 +96,7 @@ const observerStations = [
 //         "Longitude": 11.93333333
 //     },
     {
-   "StationId": 14,
+        "StationId": 14,
         "StationName": "CNR Arctic Station \"Dirigibile Italia\"",
         "Contact": null,
         "Website": "www.polarnet.cnr.it/content/view/162/58/lang,en",
@@ -110,7 +110,7 @@ const observerStations = [
         "HasSignedGPDRContract": false,
         "Latitude": 78.91666666,
         "Longitude": 11.93333333
-//     },
+     },
 //     {
 //         "StationId": 15,
 //         "StationName": "Czech Arctic Research Station of Josef Svoboda",
@@ -1295,7 +1295,7 @@ const observerStations = [
         "Latitude": 58.73745277,
         "Longitude": -93.81902222
     },
-    {
+//    {
 //         "StationId": 89,
 //         "StationName": "CEN Kangiqsualujjuaq Sukuijarvik Research Station",
 //         "Contact": null,
