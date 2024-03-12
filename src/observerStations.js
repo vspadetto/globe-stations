@@ -747,7 +747,7 @@ const observerStations = [
 //        "Confirm": null,
 //        "Reject": null,
 //        "Image": "toolik.jpg",
-/       "HasSignedGPDRContract": false,
+//        "HasSignedGPDRContract": false,
 //        "Latitude": 68.61666666,
 //        "Longitude": -149.58333333
 //    },
