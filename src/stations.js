@@ -159,22 +159,22 @@ const stations = [
 //         "Latitude": 60.60000000,
 //         "Longitude": 7.50000000
 //     },
-//     {
-//         "StationId": 18,
-//         "StationName": "Bioforsk Svanhovd Research Station ",
-//         "Contact": null,
-//         "Website": "www.bioforsk.no/svanhovd ",
-//         "Email": null,
-//         "AdminId": null,
-//         "Terms": null,
-//         "Acronym": null,
-//         "Confirm": null,
-//         "Reject": null,
-//         "Image": "svanhovd.jpg",
-//         "HasSignedGPDRContract": false,
-//         "Latitude": 69.45000000,
-//         "Longitude": 30.05000000
-//     },
+    {
+         "StationId": 18,
+         "StationName": "Bioforsk Svanhovd Research Station ",
+         "Contact": null,
+         "Website": "www.bioforsk.no/svanhovd ",
+         "Email": null,
+         "AdminId": null,
+         "Terms": null,
+         "Acronym": null,
+         "Confirm": null,
+         "Reject": null,
+         "Image": "svanhovd.jpg",
+         "HasSignedGPDRContract": false,
+         "Latitude": 69.45000000,
+         "Longitude": 30.05000000
+     },
 //     {
 //         "StationId": 19,
 //         "StationName": "Kilpisjärvi Biological Station ",
@@ -1374,6 +1374,22 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 78.67607830,
         "Longitude": 11.81907170
+    },
+         {
+        "StationId": 95,
+        "StationName": "Arctic DTU Research Station",
+        "Contact": null,
+        "Website": "https://arctic.dtu.dk/",
+        "Email": "suha@dtu.dk",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "DTU",
+        "Confirm": null,
+        "Reject": null,
+        "Image": null,
+        "HasSignedGPDRContract": false,
+        "Latitude": 66.93570560,
+        "Longitude": -53.67305000
     },
     {
         "StationId": 97,
