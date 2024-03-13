@@ -1,4 +1,4 @@
-const observerStations = [
+const observerStations = []
 // {
 //    "StationId": 1,
 //    "StationName": "Abisko Scientific Research Station",
