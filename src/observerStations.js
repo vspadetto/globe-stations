@@ -1,4 +1,4 @@
-const observerStations = []
+const observerStations = [
 // {
 //    "StationId": 1,
 //    "StationName": "Abisko Scientific Research Station",
@@ -1407,4 +1407,4 @@ const observerStations = []
 //        "Latitude": 79.523485978,
 //        "Longitude": 11.622842106
 //    }
-//]
+]
