@@ -1422,5 +1422,37 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 79.523485978,
         "Longitude": 11.622842106
+    },
+        {
+        "StationId": null,
+        "StationName": "High Altitude Research Stations Jungfraujoch",
+        "Contact": null,
+        "Website": "https://www.hfsjg.ch/en/home/",
+        "Email": "claudine.frieden@unibe.ch",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "HFSJG",
+        "Confirm": null,
+        "Reject": null,
+        "Image": null,
+        "HasSignedGPDRContract": false,
+        "Latitude": 46.547430,
+        "Longitude": 7.985240
+    },
+      {      
+         "StationId": null,
+        "StationName": "High Altitude Research Stations Gornergrat",
+        "Contact": null,
+        "Website": "https://www.hfsjg.ch/en/home/",
+        "Email": "claudine.frieden@unibe.ch",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "HFSJG",
+        "Confirm": null,
+        "Reject": null,
+        "Image": null,
+        "HasSignedGPDRContract": false,
+        "Latitude": 45.983276,
+        "Longitude": 7.784506
     }
 ]
