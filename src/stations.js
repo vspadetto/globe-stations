@@ -1424,7 +1424,7 @@ const stations = [
         "Longitude": 11.622842106
     },
     {
-        "StationId": 98,
+        "StationId": null,
         "StationName": "High Altitude Research Stations Jungfraujoch",
         "Contact": null,
         "Website": "https://www.hfsjg.ch/en/home/",
@@ -1440,7 +1440,7 @@ const stations = [
         "Longitude": 7.985240
     },
       {      
-         "StationId": 99,
+         "StationId": null,
         "StationName": "High Altitude Research Stations Gornergrat",
         "Contact": null,
         "Website": "https://www.hfsjg.ch/en/home/",
