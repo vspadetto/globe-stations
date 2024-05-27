@@ -1422,8 +1422,8 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 79.523485978,
         "Longitude": 11.622842106
-    }
-          {
+    },
+    {
         "StationId": 98,
         "StationName": "High Altitude Research Stations Jungfraujoch",
         "Contact": null,
@@ -1438,7 +1438,8 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 46.547430,
         "Longitude": 7.985240
-    }
+    },
+      {      
          "StationId": 99,
         "StationName": "High Altitude Research Stations Gornergrat",
         "Contact": null,
