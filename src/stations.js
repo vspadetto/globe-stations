@@ -1023,22 +1023,22 @@ const stations = [
 //         "Latitude": 53.51666666,
 //         "Longitude": -60.13333333
 //     },
-//     {
-//         "StationId": 72,
-//         "StationName": "Arctic Station ",
-//         "Contact": null,
-//         "Website": "http://arktiskstation.ku.dk/english",
-//         "Email": "gin@science.ku.dk",
-//         "AdminId": null,
-//         "Terms": null,
-//         "Acronym": "ArcticSt",
-//         "Confirm": null,
-//         "Reject": null,
-//         "Image": "Arctic-station-Greenland-thumb-e1510071924525-507x400.jpg",
-//         "HasSignedGPDRContract": false,
-//         "Latitude": 69.25000000,
-//         "Longitude": -53.56666666
-//     },
+     {
+         "StationId": 72,
+         "StationName": "Arctic Station ",
+         "Contact": null,
+         "Website": "http://arktiskstation.ku.dk/english",
+         "Email": "gin@science.ku.dk",
+         "AdminId": null,
+         "Terms": null,
+         "Acronym": "ArcticSt",
+         "Confirm": null,
+         "Reject": null,
+         "Image": "Arctic-station-Greenland-thumb-e1510071924525-507x400.jpg",
+         "HasSignedGPDRContract": false,
+         "Latitude": 69.25000000,
+         "Longitude": -53.56666666
+     },
     {
         "StationId": 73,
         "StationName": "Greenland Institute of Natural Resources (GINR)",
