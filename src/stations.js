@@ -1031,7 +1031,7 @@ const stations = [
          "Email": "gin@science.ku.dk",
          "AdminId": null,
          "Terms": null,
-         "Acronym": "ArcticSt",
+         "Acronym": "ARCST",
          "Confirm": null,
          "Reject": null,
          "Image": "Arctic-station-Greenland-thumb-e1510071924525-507x400.jpg",
