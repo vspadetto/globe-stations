@@ -1454,5 +1454,20 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 45.983276,
         "Longitude": 7.784506
+
+          "StationId": null,
+        "StationName": "International Scientific Center "Observatory"",
+        "Contact": null,
+        "Website": "https://observatorium.pnu.edu.ua/en",
+        "Email": "obserwatorium1938@gmail.com",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "OBSERVATORY",
+        "Confirm": null,
+        "Reject": null,
+        "Image": null,
+        "HasSignedGPDRContract": false,
+        "Latitude": 48.046960,
+        "Longitude": 24.627352
     }
 ]
