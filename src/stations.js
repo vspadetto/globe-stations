@@ -1457,7 +1457,7 @@ const stations = [
      },
       {   
           "StationId": null,
-        "StationName": "International Scientific Center "Observatory"",
+        "StationName": "International Scientific Center \"Observatory\"",
         "Contact": null,
         "Website": "https://observatorium.pnu.edu.ua/en",
         "Email": "obserwatorium1938@gmail.com",
