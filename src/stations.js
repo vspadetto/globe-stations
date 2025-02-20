@@ -1470,5 +1470,21 @@ const stations = [
         "HasSignedGPDRContract": false,
         "Latitude": 48.046960,
         "Longitude": 24.627352
+    },
+     {   
+          "StationId": 99,
+        "StationName": "Koltur Research Station",
+        "Contact": null,
+        "Website": "https://www.tjodsavnid.fo/nature-of-koltur/research-station",
+        "Email": "savn@savn.fo",
+        "AdminId": null,
+        "Terms": null,
+        "Acronym": "KOLTUR",
+        "Confirm": null,
+        "Reject": null,
+        "Image": "kors_99_20241213151747704_1.jpg",
+        "HasSignedGPDRContract": false,
+        "Latitude": 61.98470000,
+        "Longitude": -6.96430000
     }
 ]
